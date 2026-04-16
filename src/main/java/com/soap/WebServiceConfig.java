@@ -1,4 +1,5 @@
 package com.soap;
+
 import jakarta.xml.ws.Endpoint;
 import org.springframework.context.annotation.Configuration;
 import jakarta.annotation.PostConstruct;
@@ -11,9 +12,6 @@ public class WebServiceConfig {
 
     @PostConstruct
     public void publishEndpoint() {
-        String host = System.getenv("SOAP_HOST") != null 
-            ? System.getenv("SOAP_HOST") 
-            : "http://localhost:9002/auth";
-        Endpoint.publish(host, authServiceImpl);
+        Endpoint.publish("http://0.0.0.0:9002/auth", authServiceImpl);
     }
 }
