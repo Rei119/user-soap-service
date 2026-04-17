@@ -12,6 +12,6 @@ public class WebServiceConfig {
 
     @PostConstruct
     public void publishEndpoint() {
-        Endpoint.publish("http://0.0.0.0:9002/auth", authServiceImpl);
+        Endpoint.publish("http://0.0.0.0:9001/auth", authServiceImpl);
     }
 }
